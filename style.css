@@ -1,0 +1,82 @@
+/* selector {
+  propiedad: 'valor';
+} */
+
+/* . para las clases */
+/* # para los id */
+/* las etiquetas directamente: p, div */
+
+/* orden de jerarquia: arranca de izquierda menor jerarquia < */
+/* etiqueta < clase < id < estilo en línea < !important */
+
+/*un parrafo que esta dentro den un div toma el estilo de ese div, poedemos cambiarlo si le damos estilo directamente al parrafo  */
+
+*{
+  margin: 0; /*margen de afuera, del exterior del div*/
+  padding: 0; /*margen de adentro*/
+}
+
+
+h1{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: red;
+}
+
+/* seleccionando una clase: contenido */
+.contenido{
+  background-color:rgb(95, 158, 160, 50%);/*el ultimo numero es la intensidad 50%*/
+  color: black;
+  margin: 23px; /*se crea un margen fuera del color*/
+  padding: 26px;/*se crea un margen interior de su contenido (el parrafo)*/
+}
+
+/* usando otra clase dentro del mismo div */
+.contenido__texto--blanco{
+  color: white;
+}
+
+/* dando estilo a un id: parrafo */
+#parrafo{
+  color: #2b2b2b;
+}
+
+.parrafo{
+  color: rgba(71, 79, 52, 0.521);
+}
+
+/* SELECTORES NO ESTRICTOS: pueden ser hijos o nietos, no importa los toma igual
+.link.active: seleccionamos class link y active
+#banner .img: seleccionamos class img hija de banner(todos las class img que esten dentro del id banner)
+#oferta.cards: seleccionamos id oferta y class cards
+*/
+
+/* SELECTORES ESTRICTOS >, +, ~
+div>.parrafo{} : la class parrafo tiene que ser hijo si o si de un div
+div+parrafo{} : parrafo tiene que ser hermana del div
+*/
+
+/* selector descendiente estricto >*/
+span>h1{
+  /* le pone color solo a segundo renglon, porque es hijo estricto */
+  background-color: aquamarine;
+}
+/* selector hermana estricto + , tiene que ser descendiente*/
+h1+.parrafo{
+  background-color: bisque; /* le pone color a los parrafos del segundo y tercer renglon, porque h1 y parrafo son hermanos */
+}
+
+/* selector no estricto, afecta todos los hermanos, tienen que ser DESCENDIENTES */
+h2~p{
+  color: white;
+  background-color: blue;
+}
+
+/* Clase 5: minuto 8
+falta fuentes
+falta reglas:
+@font-face {
+  font-family: ;
+  src: url();
+}
+@layer {}  reglas personales
+*/
