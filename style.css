@@ -7,40 +7,45 @@
 /* las etiquetas directamente: p, div */
 
 /* orden de jerarquia: arranca de izquierda menor jerarquia < */
-/* etiqueta < clase < id < estilo en línea < !important */
+/* etiqueta(0001) < clase(0010) < id(0100) < estilo en línea(1000)es en el HTML < !important */
 
 /*un parrafo que esta dentro den un div toma el estilo de ese div, poedemos cambiarlo si le damos estilo directamente al parrafo  */
 
-*{
+* {
   margin: 0; /*margen de afuera, del exterior del div*/
   padding: 0; /*margen de adentro*/
 }
 
-
-h1{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: red;
 }
 
 /* seleccionando una clase: contenido */
-.contenido{
-  background-color:rgb(95, 158, 160, 50%);/*el ultimo numero es la intensidad 50%*/
+.contenido {
+  background-color: rgb(
+    95,
+    158,
+    160,
+    50%
+  ); /*el ultimo numero es la intensidad 50%*/
   color: black;
   margin: 23px; /*se crea un margen fuera del color*/
-  padding: 26px;/*se crea un margen interior de su contenido (el parrafo)*/
+  padding: 26px; /*se crea un margen interior de su contenido (el parrafo)*/
 }
 
 /* usando otra clase dentro del mismo div */
-.contenido__texto--blanco{
+.contenido__texto--blanco {
   color: white;
 }
 
 /* dando estilo a un id: parrafo */
-#parrafo{
+#parrafo {
   color: #2b2b2b;
 }
 
-.parrafo{
+.parrafo {
   color: rgba(71, 79, 52, 0.521);
 }
 
@@ -56,27 +61,25 @@ div+parrafo{} : parrafo tiene que ser hermana del div
 */
 
 /* selector descendiente estricto >*/
-span>h1{
+span > h1 {
   /* le pone color solo a segundo renglon, porque es hijo estricto */
   background-color: aquamarine;
 }
 /* selector hermana estricto + , tiene que ser descendiente*/
-h1+.parrafo{
+h1 + .parrafo {
   background-color: bisque; /* le pone color a los parrafos del segundo y tercer renglon, porque h1 y parrafo son hermanos */
 }
 
-/* selector no estricto, afecta todos los hermanos, tienen que ser DESCENDIENTES */
-h2~p{
+/* selector no estricto, afecta todos los hermanos de h2, tienen que ser DESCENDIENTES */
+h2 ~ p {
   color: white;
   background-color: blue;
 }
 
-/* Clase 5: minuto 8
-falta fuentes
-falta reglas:
-@font-face {
-  font-family: ;
-  src: url();
-}
-@layer {}  reglas personales
+/*  SELECTORES COMBINADOS
+.link.active:Seleccionamos la etiqueta con la clase .link y la clase .active
+
+#banner .img :Seleccionamos la etiqueta con la clase .img hija del elemento con id #banner
+
+#ofertas.cards :Seleccionamos la etiqueta con el id .ofertas y la clase .cards 
 */
